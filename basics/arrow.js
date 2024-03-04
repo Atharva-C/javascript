@@ -33,3 +33,9 @@ const user = {
 
 const res = (a,b) => ({name: "athu", age: "21"})
 console.log(res(3,4));
+
+
+//Immediately invoked function Expressions(IIFE)
+(function chai() {
+    console.log(`db connected`);
+}())
