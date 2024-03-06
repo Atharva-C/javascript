@@ -63,4 +63,9 @@
 // const myn2 = myArray.splice(1,3)
 // console.log(myn2);
 // console.log("C", myArray);
+const array = [1,2,3,4,5]
+
+for (let index = 0; index < array.length; index++) {
+    console.log(array[index]);
+}
 

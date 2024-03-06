@@ -36,6 +36,9 @@ console.log(res(3,4));
 
 
 //Immediately invoked function Expressions(IIFE)
+//used to get rid of the global scope pollution(variables and all)
 (function chai() {
     console.log(`db connected`);
-}())
+}());
+
+( (name) => {console.log(`hello ${name}`);} )('Atharva')
