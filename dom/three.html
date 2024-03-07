@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM part 3</title>
+</head>
+<body class="bodyClass" style="background-color: black; color: aliceblue;">
+    <div class="container">Jan</div>
+    <div class="container">Feb</div>    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    // div.className = "generated-class"
+    div.id = "generated-div"
+    div.setAttribute('title', 'generated-title')
+    div.setAttribute('class' ,'generated-class')
+    div.style.backgroundColor = "brown"
+    div.style.color = "white"
+    div.style.padding = '15px'
+    div.style.border = '3px solid white'
+    const newChildContent = document.createTextNode("Atharva added this div")
+    div.appendChild(newChildContent)
+
+    document.body.appendChild(div)
+</script>
+</html>

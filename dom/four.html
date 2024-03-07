@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Part 4</title>
+</head>
+<body class="bodyClass" style="background-color: black; color: aliceblue;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    // not optimized way
+    function addLanguage(langname){
+        const liItem = document.createElement('li');
+        liItem.innerHTML = `${langname}`
+        document.querySelector('.language').appendChild(liItem)
+    }
+    addLanguage('TypeScript')
+    addLanguage('Python')
+
+    // optimized way as it doesnt have to traverse the whole tree here.
+    function optiAddLanguage(langname) {
+        const liItem = document.createElement('li');
+        liItem.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(liItem)
+    }
+    optiAddLanguage('Bhai-lang')
+
+    //Editing the li
+
+    //using arrow function
+    editfunc = (lang,n) => {
+        const thirdLang = document.querySelector(`li:nth-child(${n})`) //selecting the nth child
+
+        thirdLang.innerHTML = `${lang}` // this is again not optimized approach
+
+    }
+    // editfunc('bhai-script-lang', '3')
+
+    // using normal function
+    function editLang(lang, n) {
+        const thirdLang = document.querySelector(`li:nth-child(${n})`) //selecting the nth child
+
+        thirdLang.innerHTML = `${lang}` // this is again not optimized approach
+
+        //this is optimized
+        // const newListItem = document.createElement('li')
+        // newListItem.textContent = `${lang}`
+        // thirdLang.replaceWith(newListItem)
+    }
+    // editLang('bye-script', '4')
+
+    //edit using outerHTML
+    const secondLi = document.querySelector('li:nth-child(2)')
+    // secondLi.outerHTML = '<li>Atharva-script</li>'
+
+    //remove
+    const lastLang = document.querySelector('li:last-child')
+    // lastLang.remove()
+
+</script>
+</html>
