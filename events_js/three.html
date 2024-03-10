@@ -6,17 +6,33 @@
     <title>Asynchronous Functions | JS</title>
 </head>
 <body>
-    <h1>Learning Async functions Part 2</h1>
+    <h1>LETS ROCK!!</h1>
     <button id="start">Start</button>
     <button id="stop">Stop</button>
 </body>
 <script>
-    const sayMyName = function(){
-        // console.log("Atharva");
-        // console.log(str);
+    
+    let intervalId;
+    const changeColor = function(){
+        if(document.body.style.backgroundColor === "white"){
+            document.body.style.backgroundColor = "black"
+            document.body.style.color = "white"
+        }
+        else{
+            document.body.style.backgroundColor = "white"
+            document.body.style.color = "black"
+        }
+        // console.log("My name is Atharva"); 
     }
+    document.querySelector('#start').addEventListener('click', function(){
+        intervalId = setInterval(changeColor, 300)
+        
+    })
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearInterval(intervalId)
+        intervalId = null;
+    })
 
-    setInterval(sayMyName, 1000) // can also take parameter 3rd as str above
 
 </script>
 </html>
